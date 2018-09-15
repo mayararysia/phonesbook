@@ -1,0 +1,103 @@
+body {
+    background-color: #ff4d4d;
+}
+
+.container {
+	background-color: white;
+	border-radius: 5px;
+	padding: 50px;
+    width: 75%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+table { 
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+.list-contacts-table {
+	margin-top: 50px;
+	width: 100%;
+}
+
+.list-contacts-table thead {
+	text-align: left;
+}
+
+.list-contacts-table thead tr th {
+	border-bottom: 2px solid #ddd;
+	padding: 8px;
+}
+
+.list-contacts-table tboby {
+	border-bottom: 2px solid #ddd;
+}
+
+.list-contacts-table tbody tr td {
+	padding: 8px;
+    border-top: 1px solid #ddd;
+}
+
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.div-70 {
+	width: 70%;
+}
+
+.div-25 {
+	width: 25%;
+}
+
+
+/**/ 
+.add-form {
+    margin-top: 25px;
+}
+
+.form-group {
+	margin-bottom: 16px;
+}
+
+.form-group label {
+	display: inline-block;
+	margin-bottom: 8px;
+}
+
+.form-group input[type="text"] {
+	display: block;
+    width: 95%;
+    border: 1px solid #ddd;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+}
+
+.form-group input[type="submit"] {
+	cursor: pointer;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    text-align: center;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    font-size: 16px;
+    line-height: 1.5;
+    border-radius: 4px;
+}
+
+.title-box {
+	border-bottom: 2px solid #ddd;
+    padding-bottom: 12px;
+}
+
+.title {
+	font-weight: 700;
+    font-size: 24px;
+}

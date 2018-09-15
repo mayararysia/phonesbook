@@ -24,10 +24,10 @@ git clone https://github.com/mayararysia/phonebook.git
 ## Telas
 
 - Lista de Contatos
-![Lista de Task]
+![Lista de Contato](https://raw.githubusercontent.com/mayararysia/phonebook/master/Screenshots/home.png)
 
 - Adicionando um Contato
-![Adicionando um Contato]
+![Adicionando um Contato](https://raw.githubusercontent.com/mayararysia/phonebook/master/Screenshots/register.png)
 
 
 
