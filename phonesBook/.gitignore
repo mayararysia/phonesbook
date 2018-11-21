@@ -1,0 +1,24 @@
+*target*
+*.war
+*.jar
+*.ear
+*.class
+
+# eclipse specific gitignore
+
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.loadpath
+.settings/
+build/
+ImportedClasses/
+.metadata/
