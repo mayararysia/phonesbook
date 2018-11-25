@@ -39,7 +39,7 @@ CREATE TABLE `contacts` (
 
 LOCK TABLES `contacts` WRITE;
 /*!40000 ALTER TABLE `contacts` DISABLE KEYS */;
-INSERT INTO `contacts` VALUES (1,'Jonatha Lima','meu-email@gmail.com','82998380332',NULL,1),(2,'Felipe Lima',NULL,'82984449612',NULL,0),(3,'Mayara','','88888888877','',0),(4,'luiz','','88888888887','',0);
+INSERT INTO `contacts` VALUES (1,'Jonatha Lima','meu-email@gmail.com','82999999999',NULL,1),(2,'Felipe Lima',NULL,'82984449612',NULL,0),(3,'Mayara Lima','','88888888877','mayara@email.com',0),(4,'luiz','','88888888887','',0);
 /*!40000 ALTER TABLE `contacts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

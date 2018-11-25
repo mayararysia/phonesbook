@@ -41,7 +41,7 @@ public class ContactsAddServelt extends HttpServlet {
 				PrintWriter out = resp.getWriter();
 				out.println("<html>");
 				out.println("<head>");
-				out.println("<script>alert('Não foi possível realizar operação.');window.location='./contact.jsp'</script>");
+				out.println("<script>alert('Nao foi possivel realizar operacao.');window.location='./contact.jsp'</script>");
 				out.println("</head>");
 				out.println("</html>");
 				RequestDispatcher rd = req.getRequestDispatcher("index.jsp");

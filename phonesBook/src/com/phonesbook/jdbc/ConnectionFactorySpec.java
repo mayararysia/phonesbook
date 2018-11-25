@@ -22,7 +22,7 @@ public class ConnectionFactorySpec {
 				System.out.println(rs.getString("name"));
 			}
 			
-			System.out.println("Conexão realizada com sucesso ....");
+			System.out.println("Connection successfully!");
 			CONNECTION.closeConnection();
 		} catch (Exception e) {
 			e.printStackTrace();
