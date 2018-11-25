@@ -1,15 +1,18 @@
-# phonebook
+# phonesbook: A phone book that contains multiple contacts with name, email, mobile and / or phone.
 
-Um CRUD em Java Web Application (Java EE) usando JSP
+Um **CRUD** ¹ em Java Web Application (Java EE) usando JSP.
 
-## Requisitos:
+¹ **C**reate, **R**ead, **U**pdate, **D**elete.
+
+## Requirements:
 
 - Java JDK 8+
 - MySQL (Nome do banco: phones_book)
-- Apache Tomcat 9
+- [MySQL Connector](https://dev.mysql.com/downloads/connector/j/)
+- [Apache Tomcat](https://tomcat.apache.org/) 9
 
 
-## Como usar:
+## How to use:
 
 **1.** Clone esse repositório:
 
@@ -21,7 +24,7 @@ git clone https://github.com/mayararysia/phonebook.git
 
 **3.** Rodar script na pasta SQL.
 
-## Telas
+## Screens
 
 - Lista de Contatos
 ![Lista de Contato](https://raw.githubusercontent.com/mayararysia/phonebook/master/Screenshots/home.png)
