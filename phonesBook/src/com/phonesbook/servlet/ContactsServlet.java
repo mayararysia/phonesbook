@@ -23,10 +23,10 @@ public class ContactsServlet extends HttpServlet {
 		String id = req.getParameter("id");			
 
 		/*
-		 * Valida se tem parametro ID
-		 * Se existir valida se é inteiro
-		 * Se for valor valido, busca contato pelo id
-		 * Se campo for não existir ou possuir valor invalido lista todos contatos
+		 * Valida se tem parametro ID;
+		 * Se existir, valida se é inteiro;
+		 * Se for valor valido, busca contato pelo id;
+		 * Se campo for não existir ou possuir valor invalido, lista todos contatos.
 		 */
 		if (id == null || id.isEmpty()) {
 			contacts = contactsDao.listAll();
@@ -37,7 +37,12 @@ public class ContactsServlet extends HttpServlet {
 			try {
 				Integer idInteger = Integer.parseInt(id);
 				Contacts contact = contactsDao.getContactById(idInteger);
+				
 				System.out.println(contact.getName());
+				
+				RequestDispatcher rd = req.getRequestDispatcher("contact.jsp");
+				rd.forward(req, resp);
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}			

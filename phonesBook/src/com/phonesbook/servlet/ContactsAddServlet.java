@@ -16,16 +16,21 @@ import com.phonesbook.model.Contacts;
 
 
 @WebServlet("/add-contacts")
-public class ContactsAddServelt extends HttpServlet {
+public class ContactsAddServlet extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		System.out.println("chegou no add");
+
 		String name = req.getParameter("name");
 		String phone_number = req.getParameter("phone_number");
 		String mobile_number = req.getParameter("mobile_number");
 		String email_address = req.getParameter("email_address");
 		
 		Contacts contact = new Contacts();
+
+
 		contact.setName(name);
 		contact.setPhone_number(phone_number);
 		contact.setMobile_number(mobile_number);
