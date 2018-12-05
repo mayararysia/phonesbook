@@ -16,7 +16,6 @@ public class ContactsDAO {
 		this.CONNECTION = new ConnectionFactory();
 	}
 	
-	
 	public List<Contacts> listAll() {
 		try {
 			List<Contacts> contacts = new ArrayList<>();
@@ -65,7 +64,6 @@ public class ContactsDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 		return null;
 	}
 	

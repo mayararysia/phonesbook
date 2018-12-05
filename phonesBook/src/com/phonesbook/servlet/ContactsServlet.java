@@ -40,7 +40,7 @@ public class ContactsServlet extends HttpServlet {
 				
 				System.out.println(contact.getName());
 				
-				RequestDispatcher rd = req.getRequestDispatcher("contact.jsp");
+				RequestDispatcher rd = req.getRequestDispatcher("editContact.jsp");
 				rd.forward(req, resp);
 				
 			} catch (Exception e) {
