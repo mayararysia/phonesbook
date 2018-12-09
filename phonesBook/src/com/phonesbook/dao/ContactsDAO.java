@@ -16,7 +16,6 @@ public class ContactsDAO {
 		this.CONNECTION = new ConnectionFactory();
 	}
 	
-	
 	public List<Contacts> listAll() {
 		try {
 			List<Contacts> contacts = new ArrayList<>();
@@ -65,14 +64,14 @@ public class ContactsDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 		return null;
 	}
 	
-	public boolean addContact(Contacts contact) {
+	public Boolean addContact(Contacts contact) {	
 		try {
 			Connection connection = CONNECTION.getConnection();
-			String sql = "INSERT INTO `contacts` (`name`, `phone_number`, `mobile_number`, `email_address`) VALUES (?, ?, ?, ?);";
+			String sql = "insert into `contacts` (`name`, `phone_number`, `mobile_number`, `email_address`) "
+					+ "values (?, ?, ?, ?);";
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setString(1, contact.getName());
 			ps.setString(2, contact.getPhone_number());
@@ -84,6 +83,42 @@ public class ContactsDAO {
 			e.printStackTrace();
 		}
 		
+		return false;
+	}
+	
+	public Boolean editContact(Contacts contact) {
+		
+		try {
+			Connection connection = CONNECTION.getConnection();
+			String sql = "update `contacts` set name = ?, phone_number = ?, mobile_number = ?, "
+					+ "email_address = ? where id = ? ;";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setString(1, contact.getName());
+			ps.setString(2, contact.getPhone_number());
+			ps.setString(3, contact.getMobile_number());
+			ps.setString(4, contact.getEmail_address());
+			ps.setInt(5, contact.getId());
+			ps.executeUpdate();
+			CONNECTION.closeConnection();
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
+	public Boolean delContact(Contacts contact) {
+		try {
+			Connection connection = CONNECTION.getConnection();
+			String sql = "delete from `contacts` where id = ?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, contact.getId());
+			ps.execute();
+			CONNECTION.closeConnection();
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return false;
 	}
 }

@@ -1,3 +1,5 @@
+#WebContent/WEB-INF/lib
+
 *target*
 *.war
 *.jar
@@ -15,6 +17,7 @@ tmp/**/*
 *.bak
 *.swp
 *~.nib
+*.iml
 local.properties
 .classpath
 .loadpath
@@ -22,3 +25,4 @@ local.properties
 build/
 ImportedClasses/
 .metadata/
+/bin/
