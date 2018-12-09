@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 public class ConnectionFactory {
 	private static Connection CONNECTION = null;
 	private static String DB_USER = "root";
-	private static String DB_PW = "12345";
+	private static String DB_PW = "";
 	private static String DB_URL = "localhost:3306/phones_book?useTimezone=true&serverTimezone=UTC";
 	
 	public static Connection getConnection() {

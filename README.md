@@ -34,7 +34,7 @@ git clone https://github.com/mayararysia/phonebook.git
 ![Adicionando um Contato](https://raw.githubusercontent.com/mayararysia/phonebook/master/Screenshots/register.png)
 
 - Alterando um Contato
-![Alterando um Contato](https://raw.githubusercontent.com/mayararysia/phonebook/master/Screenshots/update.png)
+![Alterando um Contato](https://raw.githubusercontent.com/mayararysia/phonebook/master/Screenshots/edit.png)
 
 
 

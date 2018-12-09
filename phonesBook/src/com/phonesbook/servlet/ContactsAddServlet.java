@@ -41,10 +41,11 @@ public class ContactsAddServlet extends HttpServlet {
 				PrintWriter out = resp.getWriter();
 				out.println("<html>");
 				out.println("<head>");
-				out.println("<script>alert('Nao foi possivel realizar a operacao.');window.location='./contact.jsp'</script>");
+				out.println("<script>alert('Nao foi possivel realizar a operacao!');window.location='./contact.jsp'</script>");
 				out.println("</head>");
 				out.println("</html>");
 				RequestDispatcher rd = req.getRequestDispatcher("index.jsp");
+				rd.forward(req, resp);
 			}
 			
 		} catch (Exception e) {
