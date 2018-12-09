@@ -38,11 +38,9 @@ public class ContactsServlet extends HttpServlet {
 				Integer idInteger = Integer.parseInt(id);
 				Contacts contact = contactsDao.getContactById(idInteger);
 				
-				System.out.println(contact.getName());
-				
+				req.setAttribute("contact", contact);
 				RequestDispatcher rd = req.getRequestDispatcher("editContact.jsp");
 				rd.forward(req, resp);
-				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}			

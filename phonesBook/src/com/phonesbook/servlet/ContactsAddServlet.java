@@ -3,7 +3,6 @@ package com.phonesbook.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,16 +19,12 @@ public class ContactsAddServlet extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-		System.out.println("chegou no add");
-
+		Contacts contact = new Contacts();
+		
 		String name = req.getParameter("name");
 		String phone_number = req.getParameter("phone_number");
 		String mobile_number = req.getParameter("mobile_number");
 		String email_address = req.getParameter("email_address");
-		
-		Contacts contact = new Contacts();
-
 
 		contact.setName(name);
 		contact.setPhone_number(phone_number);
@@ -38,7 +33,7 @@ public class ContactsAddServlet extends HttpServlet {
 		
 		try {
 			ContactsDAO contactsDao = new ContactsDAO();
-			boolean ret = contactsDao.addContact(contact);
+			Boolean ret = contactsDao.addContact(contact);
 			
 			if (ret) {
 				resp.sendRedirect("/phonesBook/");
@@ -46,12 +41,11 @@ public class ContactsAddServlet extends HttpServlet {
 				PrintWriter out = resp.getWriter();
 				out.println("<html>");
 				out.println("<head>");
-				out.println("<script>alert('Nao foi possivel realizar operacao.');window.location='./contact.jsp'</script>");
+				out.println("<script>alert('Nao foi possivel realizar a operacao.');window.location='./contact.jsp'</script>");
 				out.println("</head>");
 				out.println("</html>");
 				RequestDispatcher rd = req.getRequestDispatcher("index.jsp");
 			}
-			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
