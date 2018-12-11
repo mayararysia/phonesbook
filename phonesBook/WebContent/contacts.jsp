@@ -19,6 +19,9 @@
 				<div class="right div-30">
 					<label title="Adicionar Contato"><a href="/phonesBook/add-contacts"><img src="src/img/plus.png" /></a></label>
 				</div>
+				<div class="right div-30" hidden="true">
+					<label title="Adicionar Compromisso"><a href="/phonesBook/add-contacts"><img src="src/img/plus-comp.png" /></a></label>
+				</div>
 			</div>
 			
 			<table class="list-contacts-table">
