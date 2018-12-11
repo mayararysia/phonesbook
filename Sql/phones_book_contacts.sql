@@ -33,6 +33,29 @@ CREATE TABLE `contacts` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+
+DROP TABLE IF EXISTS `compromises`;
+
+CREATE TABLE `compromises` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `desc` varchar(255) DEFAULT NULL,
+  `type` varchar(45) DEFAULT NULL,
+  `date` varchar(255) DEFAULT NULL,
+  `time` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+
+CREATE TABLE `compromise_type` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `desc` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+
+INSERT INTO `compromise_type` VALUES (1,'REUNIAO'),(2, 'MEDICO'), (3, 'EXERCICIO'), (4, 'TAREFA'), (5, 'OUTROS');
+
 --
 -- Dumping data for table `contacts`
 --
@@ -41,7 +64,7 @@ LOCK TABLES `contacts` WRITE;
 /*!40000 ALTER TABLE `contacts` DISABLE KEYS */;
 INSERT INTO `contacts` VALUES (1,'Hermione Granger','granger@witch.com', '0021-44-1865','0021-44-7400-111-222', 1),
 (2,'Felipe Lima','lipe@email.com', NULL,'+5582-98444-9612',0),
-(3,'Tina Goldstein','tinagoldstein@witch.com', NULL,'0021 1 212 7',0),
+(3,'Tina Goldstein','tinagoldstein@witch.com', NULL,'0021 1 212 7',1),
 (4,'Leta Lestrange','lestrange@witch.com','011-44-01224','011-44-01225',0),
 (5, 'Newt Scamander', 'newt@wizard.com','011-44-20-33333333', NULL,  0);
 /*!40000 ALTER TABLE `contacts` ENABLE KEYS */;
@@ -57,3 +80,8 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2018-09-14 22:45:48
+
+--
+-- Dumping data for table `compromises`
+--
+INSERT INTO `compromises` VALUES (1,'prova','terei prova de Állgebra', 'tarefa', '20/12/2018', '12:48:44');

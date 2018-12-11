@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="com.phonesbook.model.Contacts" %>
-<%@ page import="com.phonesbook.servlet.ContactsServlet" %>
-
 
 <!DOCTYPE html>
 <html>
@@ -21,7 +19,7 @@
 				</div>
 				
 				<div class="right div-30">
-					<label title="Adicionar Compromisso"><a href="/phonesBook/add-contacts"><img src="src/img/add-rule-25px.png"/></a></label>
+					<label title="Adicionar Compromisso"><a href="/phonesBook/add-compromises"><img src="src/img/add-rule-25px.png"/></a></label>
 				</div>
 			</div>
 			
@@ -39,8 +37,7 @@
 		        </thead>
 		      
 		        <tbody>
-		        	<% ArrayList<Contacts> contacts = (ArrayList<Contacts>) request.getAttribute("contacts");
-		        	  ContactsServlet contactBO = new ContactsServlet();%>
+		        	<% ArrayList<Contacts> contacts = (ArrayList<Contacts>) request.getAttribute("contacts");%>
 		        	<% for (Contacts contact : contacts) { %>
 		        		<tr>
 		        			<td><%= contact.getName() %></td>

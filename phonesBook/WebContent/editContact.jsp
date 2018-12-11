@@ -44,7 +44,7 @@
 	      		</div>
 	
 	      		<div class="register mb-3">
-	      			<label><a href="/phonesBook/" class="waves-effect">Voltar</a></label>
+	      			<label title="Voltar"><a href="/phonesBook/" class="waves-effect"><img src="src/img/voltar-50px.png"/></a></label>
 	      		</div>
 			</form>
 	    </div>
