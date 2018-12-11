@@ -41,10 +41,9 @@ public class ContactsEditServlet extends HttpServlet{
 				PrintWriter out = resp.getWriter();
 				out.println("<html>");
 				out.println("<head>");
-				out.println("<script>alert('Nao foi possivel realizar a alteração!');</script>");
+				out.println("<script>alert('Nao foi possivel realizar a alteração!');window.location='/phonesBook/'</script>");
 				out.println("</head>");
 				out.println("</html>");
-				resp.sendRedirect("/phonesBook/");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="com.phonesbook.model.Contacts" %>
+<%@ page import="com.phonesbook.servlet.ContactsServlet" %>
+
 
 <!DOCTYPE html>
 <html>
@@ -15,7 +17,7 @@
 				<div class="left div-70"><span class="title">Contatos</span></div>
 				
 				<div class="right div-30">
-					<label><a href="/phonesBook/add-contacts"><img src="src/img/plus.png" /></a></label>
+					<label title="Adicionar"><a href="/phonesBook/add-contacts"><img src="src/img/plus.png" /></a></label>
 				</div>
 			</div>
 			
@@ -33,14 +35,15 @@
 		        </thead>
 		      
 		        <tbody>
-		        	<% ArrayList<Contacts> contacts = (ArrayList<Contacts>) request.getAttribute("contacts"); %>
+		        	<% ArrayList<Contacts> contacts = (ArrayList<Contacts>) request.getAttribute("contacts");
+		        	  ContactsServlet contactBO = new ContactsServlet();%>
 		        	<% for (Contacts contact : contacts) { %>
 		        		<tr>
 		        			<td><%= contact.getName() %></td>
 		        			<td><%= contact.getPhone_number()  == null ? "" : contact.getPhone_number()   %></td>
 		        			<td><%= contact.getMobile_number() == null ? "" : contact.getMobile_number()  %></td>
 		        			<td><%= contact.getEmail_address() == null ? "" : contact.getEmail_address()  %></td>
-		        			<td style="text-align:center;">
+		        			<td title="Favorito" style="text-align:center;">
 		        				<% if(contact.getIs_favorite()) { %>
 		        					<img src="src/img/star-filled.png" />
 		        				<% } else { %>
@@ -49,8 +52,12 @@
 		        			</td>
 		        			<td></td>
 		        			<td>
-		        				<a class="left"><img src="src/img/delete.png" /></a>
-		        				<a href="/phonesBook/contacts?id=<%= contact.getId() %>"><img src="src/img/edit.png" /></a>
+		        				<a title="Remover" class="left" href="/phonesBook/contacts?id=<%= contact.getId() %>&action=delete">
+		        					<img src="src/img/delete.png" />
+		        				</a>
+		        				<a title="Editar" href="/phonesBook/contacts?id=<%= contact.getId() %>&action=edit">
+		        					<img src="src/img/edit.png" />
+		        				</a>
 		        			</td>
 		        		</tr>
 		        	<% } %>

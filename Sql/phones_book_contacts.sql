@@ -39,11 +39,11 @@ CREATE TABLE `contacts` (
 
 LOCK TABLES `contacts` WRITE;
 /*!40000 ALTER TABLE `contacts` DISABLE KEYS */;
-INSERT INTO `contacts` VALUES (1,'Hermione Granger','0021-44-1865','0021-44-7400-111-222','granger@witch.com',1),
-(2,'Felipe Lima',NULL,'+5582-98444-9612','lipe@email.com',0),
-(3,'Tina Goldstein',NULL,'0021 1 212 7','tinagoldstein@witch.com',0),
-(4,'Leta Lestrange','011-44-01224','011-44-01225','lestrange@witch.com',0),
-(5, 'Newt Scamander', '011-44-20-33333333', NULL, 'newt@wizard.com', 0);
+INSERT INTO `contacts` VALUES (1,'Hermione Granger','granger@witch.com', '0021-44-1865','0021-44-7400-111-222', 1),
+(2,'Felipe Lima','lipe@email.com', NULL,'+5582-98444-9612',0),
+(3,'Tina Goldstein','tinagoldstein@witch.com', NULL,'0021 1 212 7',0),
+(4,'Leta Lestrange','lestrange@witch.com','011-44-01224','011-44-01225',0),
+(5, 'Newt Scamander', 'newt@wizard.com','011-44-20-33333333', NULL,  0);
 /*!40000 ALTER TABLE `contacts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

@@ -1,6 +1,8 @@
 package com.phonesbook.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.lang.annotation.Documented;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -10,18 +12,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.omg.CORBA.DomainManagerOperations;
+
 import com.phonesbook.dao.ContactsDAO;
 import com.phonesbook.model.Contacts;
 
 @WebServlet("/contacts")
 public class ContactsServlet extends HttpServlet {
 	
+	private int idEdit = -1;
+	private int idDel = -1;
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		List<Contacts> contacts;
 		ContactsDAO contactsDao = new ContactsDAO();
-		String id = req.getParameter("id");			
-
+		String id = req.getParameter("id");
+		String action = req.getParameter("action");
+		
 		/*
 		 * Valida se tem parametro ID;
 		 * Se existir, valida se é inteiro;
@@ -29,6 +37,7 @@ public class ContactsServlet extends HttpServlet {
 		 * Se campo for não existir ou possuir valor invalido, lista todos contatos.
 		 */
 		if (id == null || id.isEmpty()) {
+			System.out.println("Listar tudo");
 			contacts = contactsDao.listAll();
 			req.setAttribute("contacts", contacts);
 			RequestDispatcher rd = req.getRequestDispatcher("contacts.jsp");
@@ -38,12 +47,32 @@ public class ContactsServlet extends HttpServlet {
 				Integer idInteger = Integer.parseInt(id);
 				Contacts contact = contactsDao.getContactById(idInteger);
 				
-				req.setAttribute("contact", contact);
-				RequestDispatcher rd = req.getRequestDispatcher("editContact.jsp");
-				rd.forward(req, resp);
+				/*Editar Contato: */				
+				if (action.toUpperCase().equals("EDIT")) {
+					req.setAttribute("contact", contact);
+					RequestDispatcher rd = req.getRequestDispatcher("editContact.jsp");
+					rd.forward(req, resp);
+				}
+				
+				/*Excluir Contato: */
+				if (action.toUpperCase().equals("DELETE")) {
+					Boolean deleted = contactsDao.delContact(contact);
+					if(deleted) resp.sendRedirect("/phonesBook/");
+					else {
+					
+						PrintWriter out = resp.getWriter();
+						out.println("<html>");
+						out.println("<head>");
+						out.println("<script>alert('Nao foi possivel excluir!');window.location='/phonesBook/'</script>");
+						out.println("</head>");
+						out.println("</html>");
+					}
+				}
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}			
 		}
 	}
+	
 }
