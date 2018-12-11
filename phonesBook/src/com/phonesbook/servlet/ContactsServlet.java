@@ -20,6 +20,7 @@ import com.phonesbook.model.Contacts;
 @WebServlet("/contacts")
 public class ContactsServlet extends HttpServlet {
 	
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		List<Contacts> contacts;
@@ -63,6 +64,20 @@ public class ContactsServlet extends HttpServlet {
 						out.println("</head>");
 						out.println("</html>");
 					}
+				}
+				
+				/*Alterar Favorito*/
+				
+				if(action.toUpperCase().equals("EDITFAV")) {
+					
+					if(contact.getIs_favorite()) {
+						contact.setIs_favorite(false);
+					}
+					else{
+						contact.setIs_favorite(true);
+					}
+					Boolean changed = contactsDao.changeFavorite(contact);
+					if(changed) resp.sendRedirect("/phonesBook/");
 				}
 				
 			} catch (Exception e) {

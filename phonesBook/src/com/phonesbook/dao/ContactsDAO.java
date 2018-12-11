@@ -121,4 +121,19 @@ public class ContactsDAO {
 		}
 		return false;
 	}
+
+	public Boolean changeFavorite(Contacts contact) {
+		try {
+			Connection connection = CONNECTION.getConnection();
+			String sql = "update `contacts` set is_favorite = ? where id = ?;";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setBoolean(1, contact.getIs_favorite());
+			ps.setInt(2, contact.getId());
+			
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
 }
