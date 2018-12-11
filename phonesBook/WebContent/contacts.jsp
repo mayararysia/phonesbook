@@ -17,11 +17,11 @@
 				<div class="left div-70"><span class="title">Contatos</span></div>
 				
 				<div class="right div-30">
-					<label title="Adicionar Contato"><a href="/phonesBook/add-contacts"><img src="src/img/plus.png" /></a></label>
+					<label title="Adicionar Contato"><a href="/phonesBook/add-contacts"><img src="src/img/plus-25px.png" /></a></label>
 				</div>
 				
 				<div class="right div-30">
-					<label title="Adicionar Compromisso"><a href="/phonesBook/add-contacts"><img src="src/img/add-file.png"/></a></label>
+					<label title="Adicionar Compromisso"><a href="/phonesBook/add-contacts"><img src="src/img/add-rule-25px.png"/></a></label>
 				</div>
 			</div>
 			
