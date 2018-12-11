@@ -17,7 +17,7 @@
 				<div class="left div-70"><span class="title">Contatos</span></div>
 				
 				<div class="right div-30">
-					<label title="Adicionar"><a href="/phonesBook/add-contacts"><img src="src/img/plus.png" /></a></label>
+					<label title="Adicionar Contato"><a href="/phonesBook/add-contacts"><img src="src/img/plus.png" /></a></label>
 				</div>
 			</div>
 			

@@ -20,9 +20,6 @@ import com.phonesbook.model.Contacts;
 @WebServlet("/contacts")
 public class ContactsServlet extends HttpServlet {
 	
-	private int idEdit = -1;
-	private int idDel = -1;
-	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		List<Contacts> contacts;
@@ -37,7 +34,6 @@ public class ContactsServlet extends HttpServlet {
 		 * Se campo for não existir ou possuir valor invalido, lista todos contatos.
 		 */
 		if (id == null || id.isEmpty()) {
-			System.out.println("Listar tudo");
 			contacts = contactsDao.listAll();
 			req.setAttribute("contacts", contacts);
 			RequestDispatcher rd = req.getRequestDispatcher("contacts.jsp");
