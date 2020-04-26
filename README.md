@@ -2,7 +2,7 @@
 
 ¹ **C**reate, **R**ead, **U**pdate, **D**elete.
 
-A phone book that contains multiple contacts with name, email, mobile phone number and / or phone number.
+A phone book that contains multiple contacts with name, email, mobile phone number, and/or phone number.
 
 ## Requirements:
 
